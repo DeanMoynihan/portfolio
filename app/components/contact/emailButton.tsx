@@ -8,7 +8,7 @@ export default function EmailButton({ email }: { email: string }) {
 
   return (
     <>
-      <a onClick={() => setShowMessage(true)} className="contact-icon">
+      <a title="Email" onClick={() => setShowMessage(true)} className="contact-icon">
         <FeatherIcon icon={"mail"} size={32} strokeWidth={0.5} />
       </a>
       {showMessage && (

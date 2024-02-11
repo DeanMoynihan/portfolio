@@ -10,13 +10,14 @@ export default async function Contact({links, email}:{links:ContactType[], email
         <div className="contact-icons">
           <EmailButton email={email}/>
           {links.map(
-            ({ icon, url }: { icon: string; url: string }, index: number) => {
+            ({title, icon, url }: {title:string; icon: string; url: string }, index: number) => {
               return (
                 <a
                   key={index}
                   href={url}
                   target="_blank"
                   className="contact-icon"
+                  title={title}
                 >
                   <FeatherIcon icon={icon} size={32} strokeWidth={0.5} />
                 </a>
