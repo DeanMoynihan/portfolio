@@ -1,9 +1,10 @@
 "use client";
+import { WorkType } from "@/app/types";
 import { useState } from "react";
 
-export default function WorkControlls({ works }: { works: any }) {
-  const typesSet = new Set(works.map((item: any) => item.type));
-  const uniqueTypes: any = [...typesSet];
+export default function WorkControlls({ works }: { works: WorkType[] }) {
+  const typesSet = new Set(works.map((item: WorkType) => item.type));
+  const uniqueTypes: string[] = [...typesSet];
   const [filter, setFilter] = useState(uniqueTypes[0]);
 
   return (
@@ -28,9 +29,9 @@ export default function WorkControlls({ works }: { works: any }) {
       </div>
       <div className="work-list">
         {works
-          .sort((a: any, b: any) => b.date - a.date)
+          .sort((a: WorkType, b: WorkType) => b.date - a.date)
           .filter(({ type }: { type: string }) => type === filter)
-          .map(({title, date, url,}: { title: string; date: string; url: string }, i: number) => {
+          .map(({title, date, url,}: { title: string; date: number; url: string }, i: number) => {
               return (
                 <a key={i} href={url} target="_blank" className="work">
                   <p>{title}</p>

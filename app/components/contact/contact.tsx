@@ -1,7 +1,8 @@
 import FeatherIcon from "feather-icons-react";
 import EmailButton from "./emailButton";
+import { ContactType } from "@/app/types";
 
-export default async function Contact({links, email}:{links:any, email: string}) {
+export default async function Contact({links, email}:{links:ContactType[], email: string}) {
   return (
     <>
       <div className={`content-container fade delay-3`}>
