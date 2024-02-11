@@ -278,4 +278,7 @@ button{
     align-items: center;
   }
   
+  .work > p:first-child {
+    margin-right: 16px;
+  }
 }
