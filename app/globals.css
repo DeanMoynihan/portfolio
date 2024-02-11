@@ -26,7 +26,12 @@ h1 {
 
 h2 {
   font-size: 24px;
-  line-height: 1.2;
+  line-height: 1.4;
+}
+
+span {
+  background-color: black;
+  color: white;
 }
 
 a:not(.contact-icon) {
@@ -238,6 +243,11 @@ button{
     font-size: 18px;
   }
 
+  button {
+    font-size: 18px;
+    font-weight: 100;
+  }
+
   .title {
     flex-direction: column-reverse;
     gap: 16px;
@@ -260,6 +270,7 @@ button{
 
   .work-list {
     gap: 32px;
+    min-height: 440px;
   }
 
   .work {

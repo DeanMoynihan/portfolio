@@ -1,11 +1,11 @@
 import Profile from "../profile/profile";
 
-export default async function Header({header,about}: {header: any; about: string;}) {
+export default async function Header({header,about}: {header: any; about: string}) {
   return (
     <>
       <div className="title">
         <h1>{header.title}<br />{header.subtitle}</h1>
-        <Profile />
+        <Profile url={header.profile}/>
       </div>
       <div className="line-break" />
       <div className="fade delay-1">
