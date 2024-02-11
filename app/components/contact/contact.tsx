@@ -1,6 +1,7 @@
 import FeatherIcon from "feather-icons-react";
 import EmailButton from "./emailButton";
 import { ContactType } from "@/app/types";
+import LineBreak from "../lineBreak/lineBreak";
 
 export default async function Contact({links, email}:{links:ContactType[], email: string}) {
   return (
@@ -26,7 +27,7 @@ export default async function Contact({links, email}:{links:ContactType[], email
           )}
         </div>
       </div>
-      <div className="line-break" />
+      <LineBreak showIcon={false}/>
     </>
   );
 }
