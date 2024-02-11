@@ -1,3 +1,14 @@
+
+::selection  {
+  color: white;
+  background: black;
+}
+
+span::selection  {
+  color: black;
+  background: white;
+}
+
 body {
   font-family: 'Roboto Mono', monospace;
   color: black;
@@ -177,7 +188,7 @@ button{
 }
 
 .not-active {
-  opacity: .5;
+  opacity: .33;
 }
 
 .profile-container {

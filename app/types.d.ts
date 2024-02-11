@@ -18,6 +18,7 @@ export interface HeaderType {
 }
 
 export interface ContactType {
+    title: string,
     icon: string,
     url: string
 }
