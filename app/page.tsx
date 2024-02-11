@@ -3,11 +3,12 @@ import Weather from "./components/weather/weather";
 import Work from "./components/work/work";
 import Header from "./components/header/header";
 import { GoogleAnalytics } from '@next/third-parties/google'
+import { DataType } from "./types";
 
 export default async function Home() {
   try {
     const res = await fetch(process.env.API_HOST as string);
-    const data = await res.json();
+    const data:DataType = await res.json();
     
     return (
       <main>

@@ -1,6 +1,7 @@
+import { HeaderType } from "@/app/types";
 import Profile from "../profile/profile";
 
-export default async function Header({header,about}: {header: any; about: string}) {
+export default async function Header({header,about}: {header: HeaderType; about: string}) {
   return (
     <>
       <div className="title">
