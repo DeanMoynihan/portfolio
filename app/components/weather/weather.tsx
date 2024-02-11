@@ -1,4 +1,5 @@
 import FeatherIcon from "feather-icons-react";
+import LineBreak from "../lineBreak/lineBreak";
 
 export default async function Weather({weatherData}:{weatherData:any}) {
   const { mapLoc } = weatherData;
@@ -31,7 +32,7 @@ export default async function Weather({weatherData}:{weatherData:any}) {
                 <FeatherIcon icon={getIconByID(weather.weather[0].id.toString())} size={64} strokeWidth={0.33} />
               </div>
           </div>
-          <div className="line-break"/>
+          <LineBreak showIcon={false}/>
         </>
     );
   } catch (e) {
