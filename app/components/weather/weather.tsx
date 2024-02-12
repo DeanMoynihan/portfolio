@@ -27,7 +27,7 @@ export default async function Weather({weatherData}:{weatherData:any}) {
 
     return (
       <>
-          <FadeOnScroll delay={0}>
+          <FadeOnScroll title={"WHERE?"} delay={0}>
           <div className="content-container">
               <div className="weather-title">
                 <h2>CURRENTLY BASED IN {weather.name.toUpperCase()}</h2>

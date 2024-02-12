@@ -8,7 +8,7 @@ export default function Header({header,about}: {header: HeaderType; about: strin
   
   return (
     <>
-      <FadeOnScroll delay={0}>
+      <FadeOnScroll title={""} delay={0}>
         <div className={`title`}>
           <h1>{header.title}<br /><span>{header.subtitle}</span></h1>
           <Profile url={header.profile}/>
@@ -18,7 +18,7 @@ export default function Header({header,about}: {header: HeaderType; about: strin
         <LineBreak showIcon={true}/>
       </div>
       {/* <FixedHeader /> */}
-      <FadeOnScroll delay={0}>
+      <FadeOnScroll title={"ABOUT ME"} delay={0}>
         <div className={`about-container`}>
           <h2 dangerouslySetInnerHTML={{ __html: about }}></h2>
         </div>

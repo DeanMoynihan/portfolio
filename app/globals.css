@@ -271,6 +271,31 @@ button{
   left: -24px;
 }
 
+.section-tracker {
+  position: fixed;
+  left: 64px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media only screen and (min-width: 2000px) {
+  .section-tracker {
+    left: 120px;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .section-tracker {
+    left: 8px;
+  }
+}
+
+@media only screen and (max-width: 1250px) {
+  .section-tracker {
+    display: none;
+  }
+}
+
 @media only screen and (max-width: 720px) {
   main {
     margin: 32px auto;

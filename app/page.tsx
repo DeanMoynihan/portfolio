@@ -4,8 +4,8 @@ import Work from "./components/work/work";
 import Header from "./components/header/header";
 import { GoogleAnalytics } from '@next/third-parties/google'
 import { DataType } from "./types";
-import LineBreak from "./components/lineBreak/lineBreak";
 import SkillsTicker from "./components/skillsTicker/skillsTicket";
+import SectionTracker from "./components/sectionTracker/sectionTracker";
 
 export default async function Home() {
   try {
@@ -14,6 +14,7 @@ export default async function Home() {
 
     return (
       <main>
+        <SectionTracker />
         <GoogleAnalytics gaId="G-1V20XCBKGF" />
         <Header header={data.header} about={data.about} />
         <SkillsTicker skills={data.skills}/>
