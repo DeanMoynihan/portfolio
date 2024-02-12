@@ -1,18 +1,30 @@
 
+:root {
+  --foreground: #000000;
+  --background: #FFFFFF;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --foreground: #FFFFFF;
+    --background: #000000
+  }
+} */
+
 ::selection  {
-  color: white;
-  background: black;
+  color: var(--background);
+  background: var(--foreground);
 }
 
 span::selection  {
-  color: black;
-  background: white;
+  color: var(--foreground);
+  background: var(--background);
 }
 
 body {
   font-family: 'Roboto Mono', monospace;
-  color: black;
-  background: white;
+  color: var(--foreground);
+  background: var(--background);
   padding: 8px;
   font-weight: 100;
 }
@@ -41,8 +53,8 @@ h2 {
 }
 
 span {
-  background-color: black;
-  color: white;
+  background-color: var(--foreground);
+  color: var(--background);
 }
 
 a:not(.contact-icon) {
@@ -54,17 +66,18 @@ a:not(.contact-icon) {
 button:hover,
 a:not(.contact-icon):hover {
   text-decoration: none;
-  background-color: black;
-  color: white;
+  background-color: var(--foreground);
+  color: var(--background);
 }
 
 a:visited,
 a:link,
 a:active {
- color: black;
+ color: var(--foreground);
 }
 
 button{
+  color: var(--foreground);
   background: none;
   outline: none;
   border: none;
@@ -87,6 +100,15 @@ button{
   width: inherit;
   transition-duration: 1s;
   opacity: 1;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0)
+  }
+  100% {
+    transform: translateX(-50%)
+  }
 }
 
 .contact-icon:hover {
@@ -183,7 +205,7 @@ button{
 }
 
 .profile-container {
-  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='100' ry='100' stroke='black' stroke-width='1' stroke-dasharray='6%2c 6' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='100' ry='100' stroke='%23333' stroke-width='1' stroke-dasharray='6%2c 6' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
   border-radius: 100px;
   width: fit-content;
   height: fit-content;
@@ -216,10 +238,10 @@ button{
   position: fixed;
   top: 0;
   left: 0;
-  background: black;
+  background: var(--foreground);
   margin: 4px;
   padding: 16px;
-  color: white;
+  color: var(--background);
   font-size: 18px;
   transition-delay: 3s;
 }
