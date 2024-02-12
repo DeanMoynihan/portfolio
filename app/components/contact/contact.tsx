@@ -7,16 +7,15 @@ import FadeOnScroll from "../fadeOnScroll/fadeOnScroll";
 export default async function Contact({links, email}:{links:ContactType[], email: string}) {
   return (
     <>
-    
-      <div className={`content-container`}>
+      <div title={"CONTACT"} className={`content-container content`}>
         <div className="contact-icons">
-        <FadeOnScroll delay={0}>
+        <FadeOnScroll title={""} delay={0}>
           <EmailButton email={email}/>
           </FadeOnScroll>
           {links.map(
             ({title, icon, url }: {title:string; icon: string; url: string }, index: number) => {
               return (
-                <FadeOnScroll delay={index + 1} key={index}>
+                <FadeOnScroll title={""} delay={index + 1} key={index}>
                   <a
                     href={url}
                     target="_blank"
