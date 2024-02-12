@@ -8,11 +8,17 @@ export default function Scissors() {
 
     useEffect(() => {
         const handleScroll = () => {
+            
             setLeftPosition((prev) => {
-                const mainWidth = document.querySelector('main')?.offsetWidth;
+                const mainElement = document.querySelector('main');
 
-                if(mainWidth){
-                    const newPos = (mainWidth < 800 ? (window.scrollY / 2) : (window.scrollY)) - 24;
+                if(mainElement){
+                  const mainWidth = mainElement.offsetWidth;
+                  const mainHeight = mainElement.offsetHeight;
+                  const totalScrollableDistance = mainHeight - window.innerHeight;
+
+                    //const newPos = (mainWidth < 800 ? (window.scrollY / 2) : (window.scrollY / mainHeight)) - 24;
+                    const newPos = ((window.scrollY / totalScrollableDistance) * mainWidth) - 24;
 
                     setDirection(newPos > prev ? 1 : -1);
 
@@ -33,10 +39,6 @@ export default function Scissors() {
           window.removeEventListener('scroll', handleScroll);
         };
       }, []);
-
-      useEffect(() => {
-        console.log(direction);
-      }, [direction]);
 
   return (
     <div className="scissor-container" style={{position: 'absolute', left: `${leftPosition}px`, transform: `${direction === 1 ? "rotate(0deg) translateY(1.2px)" : "rotate(180deg) translateY(2.5px)"}`}}><FeatherIcon icon={"scissors"} size={24} strokeWidth={0.5} /></div>

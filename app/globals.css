@@ -62,7 +62,6 @@ a:not(.contact-icon) {
   text-decoration: underline;
 }
 
-
 button:hover,
 a:not(.contact-icon):hover {
   text-decoration: none;
@@ -111,6 +110,18 @@ button{
   }
 }
 
+.fixed-header {
+  height: 75px;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  width: 800px;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+  box-shadow: 0 8px 16px -16px black;
+}
+
 .contact-icon:hover {
   opacity: .5;
 }
@@ -119,6 +130,7 @@ button{
   display: flex;
   align-items: center;
   position: relative;
+  width: 100%;
 }
 
 .line-break {
@@ -181,7 +193,7 @@ button{
   font-size: 24px;
   justify-content: space-between;
   text-decoration: none !important;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .contact-icons {
@@ -281,6 +293,11 @@ button{
     font-weight: 100;
   }
 
+  .fixed-header {
+    left: 0;
+    overflow-x: hidden;
+  }
+
   .title {
     min-height: 550px;
     flex-direction: column-reverse;
@@ -315,6 +332,7 @@ button{
   .work {
     display: flex;
     align-items: center;
+    font-size: 18px;
   }
   
   .work > p:first-child {
