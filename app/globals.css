@@ -278,7 +278,19 @@ button{
   transform: translateY(-50%);
 }
 
-@media only screen and (max-width: 1300px) {
+@media only screen and (min-width: 2000px) {
+  .section-tracker {
+    left: 120px;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .section-tracker {
+    left: 8px;
+  }
+}
+
+@media only screen and (max-width: 1250px) {
   .section-tracker {
     display: none;
   }
