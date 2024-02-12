@@ -30,7 +30,7 @@ export default async function Weather({weatherData}:{weatherData:any}) {
           <FadeOnScroll>
           <div className="content-container">
               <div className="weather-title">
-                <h2>BASED IN {weather.name.toUpperCase()}</h2>
+                <h2>CURRENTLY BASED IN {weather.name.toUpperCase()}</h2>
               </div>
               <div className="icon-holder" title="Cambridge Right Now">
                 <FeatherIcon icon={getIconByID(weather.weather[0].id.toString())} size={64} strokeWidth={0.33} />

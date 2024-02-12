@@ -12,12 +12,12 @@ export default function Scissors() {
                 const mainWidth = document.querySelector('main')?.offsetWidth;
 
                 if(mainWidth){
-                    const newPos = window.scrollY - 24;
+                    const newPos = (mainWidth < 800 ? (window.scrollY / 2) : (window.scrollY)) - 24;
 
                     setDirection(newPos > prev ? 1 : -1);
 
                     if(newPos < mainWidth){
-                        return window.scrollY - 24;
+                        return newPos;
                     }
 
                     return mainWidth;
