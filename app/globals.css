@@ -319,6 +319,10 @@ button{
     width: 100%;
   }
 
+  .contact-icons > div {
+    width: auto;
+  }
+
   .work-controls{
     width: 100%;
     justify-content: center;
