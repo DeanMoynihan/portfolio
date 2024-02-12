@@ -3,6 +3,7 @@ export interface DataType {
     about: string,
     email: string,
     weather: WeatherType,
+    skills: string[],
     contact: ContactType[],
     work: WorkType[],
 }
