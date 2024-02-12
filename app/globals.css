@@ -87,7 +87,6 @@ button{
   width: inherit;
   transition-duration: 1s;
   opacity: 1;
-  transform: translateX(0px);
 }
 
 .contact-icon:hover {
