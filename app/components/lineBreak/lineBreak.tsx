@@ -1,9 +1,9 @@
-import FeatherIcon from "feather-icons-react";
+import Scissors from "./scissors";
 
-export default async function LineBreak({showIcon}:{showIcon:boolean}) {
+export default function LineBreak({showIcon}:{showIcon:boolean}) {
   return (
       <div className="line-break-container">
-        {showIcon && <FeatherIcon icon={"scissors"} size={24} strokeWidth={0.5} />}
+        {showIcon && <Scissors/>}
         <div className="line-break" />
       </div>
   );

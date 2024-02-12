@@ -1,5 +1,6 @@
 import FeatherIcon from "feather-icons-react";
 import LineBreak from "../lineBreak/lineBreak";
+import FadeOnScroll from "../fadeOnScroll/fadeOnScroll";
 
 export default async function Weather({weatherData}:{weatherData:any}) {
   const { mapLoc } = weatherData;
@@ -9,7 +10,7 @@ export default async function Weather({weatherData}:{weatherData:any}) {
     const weather = await res.json();
 
     const isNight = function(){
-      return (weather.dt > weather.sys.sunset)
+      return (weather.dt > weather.sys.sunset && weather.dt < weather.sys.sunrise)
     }
 
     const getIconByID = function (id: string) {
@@ -25,13 +26,17 @@ export default async function Weather({weatherData}:{weatherData:any}) {
     };
 
     return (
-        <>
-          <div className="content-container fade delay-2">
-              <h2>BASED IN {weather.name.toUpperCase()}</h2>
+      <>
+          <FadeOnScroll>
+          <div className="content-container">
+              <div className="weather-title">
+                <h2>CURRENTLY BASED IN {weather.name.toUpperCase()}</h2>
+              </div>
               <div className="icon-holder" title="Cambridge Right Now">
                 <FeatherIcon icon={getIconByID(weather.weather[0].id.toString())} size={64} strokeWidth={0.33} />
               </div>
           </div>
+          </FadeOnScroll>
           <LineBreak showIcon={false}/>
         </>
     );
@@ -39,7 +44,6 @@ export default async function Weather({weatherData}:{weatherData:any}) {
     console.error(e);
   }
 }
-
 
 const mockWeather = {
     "coord": {

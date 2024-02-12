@@ -78,38 +78,16 @@ button{
 
 }
 
-.fade {
+.hidden {
+  /* transform: translateX(-25px); */
   opacity: 0;
-  animation: fadeInAnimation ease 1s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
+}
+
+.fade {
+  width: inherit;
   transition-duration: 1s;
-}
-
-.delay-1 {
-  animation-delay: 0.25s;
-}
-
-.delay-2 {
-  animation-delay: 0.5s;
-}
-
-.delay-3 {
-  animation-delay: 0.75s;
-}
-
-.delay-4 {
-  animation-delay: 1s;
-}
-
-@keyframes fadeInAnimation {
-  0% {
-      opacity: 0;
-  }
-  100% {
-
-      opacity: 1;
-  }
+  opacity: 1;
+  transform: translateX(0px);
 }
 
 .contact-icon:hover {
@@ -119,6 +97,7 @@ button{
 .line-break-container {
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .line-break {
@@ -132,6 +111,13 @@ button{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  min-height: 250px;
+}
+
+.about-container {
+  min-height: 250px;
+  display: flex;
+  align-items: center;
 }
 
 .icon-holder {
@@ -155,7 +141,7 @@ button{
   flex-direction: row;
   gap: 16px;
   font-size: 24px;
-  margin-bottom: 4px;
+  margin-bottom: 32px;
 }
 
 .work-list {
@@ -217,7 +203,7 @@ button{
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  min-height: 250px;
+  min-height: 450px;
 }
 
 .profile-picture {
@@ -246,12 +232,19 @@ button{
   cursor: pointer;
 }
 
+.scissor-container {
+  width: 24px;
+  position: absolute;
+  left: -24px;
+}
+
 @media only screen and (max-width: 720px) {
   main {
     margin: 32px auto;
   }
 
   h1 {
+    flex: 1;
     font-size: 24px;
     text-align: center;
   }
@@ -259,6 +252,7 @@ button{
   h2 {
     text-align: justify;
     font-size: 18px;
+    flex: 1;
   }
 
   button {
@@ -267,8 +261,15 @@ button{
   }
 
   .title {
+    min-height: 550px;
     flex-direction: column-reverse;
     gap: 16px;
+  }
+
+  .weather-title {
+    flex: 1;
+    display: flex;
+    align-items: center;
   }
 
   .content-container {
@@ -283,7 +284,6 @@ button{
   .work-controls{
     width: 100%;
     justify-content: center;
-    margin-bottom: 16px;
   }
 
   .work-list {
