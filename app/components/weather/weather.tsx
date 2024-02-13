@@ -10,7 +10,7 @@ export default async function Weather({weatherData}:{weatherData:any}) {
     const weather = await res.json();
 
     const isNight = function(){
-      return (weather.dt > weather.sys.sunset && weather.dt < weather.sys.sunrise)
+      return (weather.dt > weather.sys.sunset)
     }
 
     const getIconByID = function (id: string) {
@@ -32,7 +32,7 @@ export default async function Weather({weatherData}:{weatherData:any}) {
               <div className="weather-title">
                 <h2>CURRENTLY BASED IN {weather.name.toUpperCase()}</h2>
               </div>
-              <div className="icon-holder" title="Cambridge Right Now">
+              <div className="icon-holder" title={`Cambridge @ ${new Date(weather.dt as number * 1000)}`}>
                 <FeatherIcon icon={getIconByID(weather.weather[0].id.toString())} size={64} strokeWidth={0.33} />
               </div>
           </div>

@@ -9,8 +9,8 @@ export default function SkillsTicker({skills}:{skills: string[]}) {
     return (
         <>
             <FadeOnScroll title={"SKILLS"} delay={0}>
-                <div style={{minHeight: "150px", display: "flex", alignItems: "center", flexDirection: "row", textWrap: "nowrap", overflowX: "hidden"}}>
-                    <div style={{display: "flex", animation: "marquee 30s linear infinite"}}>
+                <div className="skills-container">
+                    <div className="skills-ani">
                         <h2>&nbsp;{getText()}</h2>
                         <h2>&nbsp;{getText()}</h2>
                     </div>

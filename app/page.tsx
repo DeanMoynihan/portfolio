@@ -2,6 +2,7 @@ import Contact from "./components/contact/contact";
 import Weather from "./components/weather/weather";
 import Work from "./components/work/work";
 import Header from "./components/header/header";
+import About from "./components/about/about";
 import { GoogleAnalytics } from '@next/third-parties/google'
 import { DataType } from "./types";
 import SkillsTicker from "./components/skillsTicker/skillsTicket";
@@ -16,7 +17,8 @@ export default async function Home() {
       <main>
         <SectionTracker />
         <GoogleAnalytics gaId="G-1V20XCBKGF" />
-        <Header header={data.header} about={data.about} />
+        <Header header={data.header} />
+        <About about={data.about}/>
         <SkillsTicker skills={data.skills}/>
         <Weather weatherData={data.weather}/>
         <Contact links={data.contact} email={data.email}/>
