@@ -8,7 +8,7 @@ export default function SkillsTicker({skills}:{skills: string[]}) {
     
     return (
         <>
-            <FadeOnScroll title={"SKILLS"} delay={0}>
+            <FadeOnScroll threshold={0.66} title={"SKILLS"} delay={0}>
                 <div className="skills-container">
                     <div className="skills-ani">
                         <h2>&nbsp;{getText()}</h2>

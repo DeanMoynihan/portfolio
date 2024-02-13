@@ -9,13 +9,13 @@ export default async function Contact({links, email}:{links:ContactType[], email
     <>
       <div title={"CONTACT"} className={`content-container content`}>
         <div className="contact-icons">
-        <FadeOnScroll title={""} delay={0}>
+        <FadeOnScroll threshold={0.66} title={""} delay={0}>
           <EmailButton email={email}/>
           </FadeOnScroll>
           {links.map(
             ({title, icon, url }: {title:string; icon: string; url: string }, index: number) => {
               return (
-                <FadeOnScroll title={""} delay={index + 1} key={index}>
+                <FadeOnScroll threshold={0.66} title={""} delay={index + 1} key={index}>
                   <a
                     href={url}
                     target="_blank"

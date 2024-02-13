@@ -8,7 +8,7 @@ export default function Header({header}: {header: HeaderType}) {
   
   return (
     <>
-      <FadeOnScroll title={""} delay={0}>
+      <FadeOnScroll threshold={0.66} title={""} delay={0}>
         <div className={`title`}>
           <h1>{header.title}<br /><span>{header.subtitle}</span></h1>
           <Profile url={header.profile}/>

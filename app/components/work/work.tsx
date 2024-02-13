@@ -1,14 +1,12 @@
 import FadeOnScroll from "../fadeOnScroll/fadeOnScroll";
 import Rework from "./reWork";
-import WorkControlls from "./workControlls";
 
-export default async function Work({works}:{works:any}) {
+export default function Work({works}:{works:any}) {
   return (
-    <div className="work-container">
-        <FadeOnScroll title={"WORK"} delay={0}>
-          {/* <WorkControlls works={works} /> */}
+    <FadeOnScroll threshold={0.25} title={"WORK"} delay={0}>
+      <div className="work-container">
           <Rework works={works} />
-        </FadeOnScroll>
-    </div>
+      </div>
+    </FadeOnScroll>
   );
 }

@@ -1,10 +1,10 @@
 "use client"
 import { useInView } from 'react-intersection-observer';
 
-export default function FadeOnScroll({children, title, delay = 0}:{children: any, title:string, delay: number}) {
+export default function FadeOnScroll({children, title, threshold = 0.66, delay = 0}:{children: any, title:string, threshold:number, delay: number}) {
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.66,
+    threshold: threshold,
   });
 
   const animationClass = inView ? 'fade' : 'hidden';
