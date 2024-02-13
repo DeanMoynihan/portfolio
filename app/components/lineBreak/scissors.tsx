@@ -20,7 +20,8 @@ export default function Scissors() {
                     //const newPos = (mainWidth < 800 ? (window.scrollY / 2) : (window.scrollY / mainHeight)) - 24;
                     const newPos = ((window.scrollY / totalScrollableDistance) * mainWidth) - 24;
 
-                    setDirection(newPos > prev ? 1 : -1);
+
+                    setDirection(newPos > prev || newPos < 0 ? 1 : -1);
 
                     if(newPos < mainWidth){
                         return newPos;

@@ -28,5 +28,6 @@ export interface WorkType {
   title: string,
   date: number,
   url: string,
+  thumbnail: string,
   type: string
 }

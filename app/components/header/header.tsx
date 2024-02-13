@@ -4,11 +4,11 @@ import LineBreak from "../lineBreak/lineBreak";
 import FadeOnScroll from "../fadeOnScroll/fadeOnScroll";
 import FixedHeader from "./fixedHeader";
 
-export default function Header({header,about}: {header: HeaderType; about: string}) {
+export default function Header({header}: {header: HeaderType}) {
   
   return (
     <>
-      <FadeOnScroll title={""} delay={0}>
+      <FadeOnScroll threshold={0.66} title={""} delay={0}>
         <div className={`title`}>
           <h1>{header.title}<br /><span>{header.subtitle}</span></h1>
           <Profile url={header.profile}/>
@@ -18,12 +18,6 @@ export default function Header({header,about}: {header: HeaderType; about: strin
         <LineBreak showIcon={true}/>
       </div>
       {/* <FixedHeader /> */}
-      <FadeOnScroll title={"ABOUT ME"} delay={0}>
-        <div className={`about-container`}>
-          <h2 dangerouslySetInnerHTML={{ __html: about }}></h2>
-        </div>
-      </FadeOnScroll>
-      <LineBreak showIcon={false}/>
     </>
   );
 }
