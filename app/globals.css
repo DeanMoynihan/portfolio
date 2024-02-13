@@ -165,7 +165,7 @@ button{
   flex-direction: row;
   gap: 16px;
   font-size: 24px;
-  margin-bottom: 32px;
+  margin-bottom: 16px;
 }
 
 .work-list {
@@ -180,7 +180,7 @@ button{
 .work-box-container{
   border: 1px dashed black;
   width: 100%;
-  height: 125px;
+  height: 150px;
   position: relative;
   display: flex;
   align-items: center;
@@ -198,7 +198,7 @@ button{
 .work-box-container:hover > .work-box-background{
   filter: grayscale(0%);
   opacity: .8;
-  transition-duration: 5s linear;
+  transition-duration: 1s;
   background-position-y: center;
 }
 
@@ -248,7 +248,7 @@ button{
   right: 0px;
   top: 0px;
   bottom: 0px;
-  border: 8px solid white;
+  border: 16px solid white;
   pointer-events: none;
 }
 
@@ -457,19 +457,12 @@ button{
     min-height: 440px;
   }
 
-  .work-box-container {
-    height: 150px;
-  }
-
   .work-box-title > h2 {
     padding: 0;
+    max-width: 345px;
   }
 
   .work-box-background {
     opacity: .1;
-  }
-
-  .work-box-background:before {
-    border: 16px solid white;
   }
 }
