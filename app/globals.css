@@ -317,7 +317,7 @@ button{
   top: 0;
   left: 0;
   background: var(--foreground);
-  margin: 4px;
+  margin: 16px;
   padding: 16px;
   color: var(--background);
   font-size: 18px;
@@ -354,7 +354,6 @@ button{
 
 .section-tracker {
   position: fixed;
-  left: 64px;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -377,23 +376,18 @@ button{
   transition-duration: 0.33s;
 }
 
-@media only screen and (min-width: 2000px) {
-  .section-tracker {
-    left: 120px;
-  }
-}
-
-@media only screen and (max-width: 1400px) {
-  .section-tracker {
-    left: 8px;
-  }
-}
-
 @media only screen and (max-width: 1250px) {
+  main {
+    max-width: 600px;
+  }
+}
+
+@media only screen and (max-width: 1044px) {
   .section-tracker {
     display: none;
   }
 }
+
 
 @media only screen and (max-width: 720px) {
   main {
