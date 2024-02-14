@@ -4,16 +4,32 @@ import { useState, useEffect } from "react";
 export default function SectionTracker() {
     const [scrollYPos, setScrollYPos] = useState(0);
     const [scrolledContents, setScrolledContents] = useState<string[]>([]);
+    const [leftPos, setLeftPos] = useState(0);
 
     useEffect(() => {
+        const mainElement = document.querySelector('main');
+        const mainRect = mainElement?.getBoundingClientRect();
+
         const handleScroll = () => {
             setScrollYPos(window.scrollY);
         };
-    
+
+        const handleResize = () => {
+            const mainRectReact = mainElement?.getBoundingClientRect();
+
+            if(mainRectReact){
+                setLeftPos(Clamp(mainRectReact.left / 2 - 200, 0, 1000));
+            } 
+        };
+        
+        setLeftPos(mainRect ? Clamp(mainRect.left / 2 - 200, 0, 1000) : 0);
+
+        window.addEventListener('resize', handleResize);
         window.addEventListener('scroll', handleScroll);
     
         return () => {
           window.removeEventListener('scroll', handleScroll);
+          window.removeEventListener('resize', handleResize);
         };
       }, []);
 
@@ -48,9 +64,22 @@ export default function SectionTracker() {
 
       }, [scrollYPos]);
 
+      const Clamp = function(value:number, min:number, max:number){
+        if(value < min){
+            return min;
+        }
+
+        if(value > max){
+            return min;
+        }
+
+        return value;
+      }
+
     return (
-        <div className="section-tracker">
-          <h1 style={{background: "black", color: "white", padding: "0px 8px"}}>{scrolledContents && scrolledContents[scrolledContents.length - 1]}</h1>
+        <div className="section-tracker" style={{ minWidth: "200px", left: leftPos}}>
+          <h1 style={{background: "black", float: "right", color: "white", padding: "0px 8px"}}>{scrolledContents && scrolledContents[scrolledContents.length - 1]}</h1>
         </div>
     );
 }
+
