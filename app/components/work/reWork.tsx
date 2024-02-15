@@ -44,7 +44,7 @@ export default function Rework({ works }: { works: WorkType[] }) {
           .map(({title, date, url, thumbnail}: { title: string; date: number; url: string; thumbnail: string }, i: number) => {
               return (
                 <a key={i} href={url} target="_blank">
-                    <div  className="work-box-container" >
+                    <div className="work-box-container" >
                         <div className="work-box-title" >
                             <h2>{title}</h2>
                             <h2>{date > 0 && date}</h2>

@@ -10,7 +10,7 @@ import SectionTracker from "./components/sectionTracker/sectionTracker";
 
 export default async function Home() {
   try {
-    const res = await fetch(process.env.API_HOST as string);
+    const res = await fetch(process.env.API_HOST as string, { next: { revalidate: 3600 } });
     const data:DataType = await res.json();
 
     return (
