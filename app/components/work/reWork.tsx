@@ -1,15 +1,11 @@
 "use client";
 import { WorkType } from "@/app/types";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function Rework({ works }: { works: WorkType[] }) {
   const typesSet = new Set(works.map((item: WorkType) => item.type));
   const uniqueTypes: string[] = [...typesSet];
   const [filter, setFilter] = useState(uniqueTypes[0]);
-
-  useEffect(()=>{
-    
-  },[filter])
 
   return (
     <>
