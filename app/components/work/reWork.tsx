@@ -1,11 +1,15 @@
 "use client";
 import { WorkType } from "@/app/types";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Rework({ works }: { works: WorkType[] }) {
   const typesSet = new Set(works.map((item: WorkType) => item.type));
   const uniqueTypes: string[] = [...typesSet];
   const [filter, setFilter] = useState(uniqueTypes[0]);
+
+  useEffect(()=>{
+    
+  },[filter])
 
   return (
     <>
@@ -44,7 +48,7 @@ export default function Rework({ works }: { works: WorkType[] }) {
           .map(({title, date, url, thumbnail}: { title: string; date: number; url: string; thumbnail: string }, i: number) => {
               return (
                 <a key={i} href={url} target="_blank">
-                    <div  className="work-box-container" >
+                    <div className="work-box-container" >
                         <div className="work-box-title" >
                             <h2>{title}</h2>
                             <h2>{date > 0 && date}</h2>
